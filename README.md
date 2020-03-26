@@ -1,5 +1,5 @@
 <p align="center">
-	<a href="https://docs.justauth.whnb.wang"><img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/logo.png" width="400"></a>
+	<a href="https://docs.justauth.whnb.wang"><img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/Justauth.png" width="400"></a>
 </p>
 <p align="center">
 	<strong>Login, so easy.</strong>
@@ -228,3 +228,5 @@ _请知悉：经咨询CSDN官方客服得知，CSDN的授权开放平台已经�
 | 支付宝  | 微信  |
 | :------------: | :------------: |
 | <img src="https://gitee.com/yadong.zhang/static/raw/master/qrcode/zfb_code.png" width="200"/> | <img src="https://gitee.com/yadong.zhang/static/raw/master/qrcode/wx_code.png" width="200" /> |
+
+通过“[爱发电](https://afdian.net/@zhangyadong)”赞助，感谢您的支持
