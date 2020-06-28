@@ -1,4 +1,46 @@
-## 1.15.3-alpha
+## 1.15.5
+### 2020/06/24
+- BUG
+    - 解决 `Microsoft` 授权失败的 BUG
+    - 解决 `Coding` 个人账号授权失败的 BUG（目前只能使用团队模式进行授权，需要传入团队名，参考`AuthConfig#codingGroupName`）
+    - 解决 `AuthLinkedinRequest#getAvatar` NPE 的问题。（领英用户没有头像时，原代码会报 NPE）
+    - 解决抖音登录获取用户地址异常的问题。
+    - 解决人人网登录时 token 中带有 `|` 引起的异常，[Gitee!15](https://gitee.com/yadong.zhang/JustAuth/pulls/15)
+- 新增
+    - 支持阿里云授权登录，[Github#81](https://github.com/justauth/JustAuth/pull/81)
+    - AuthUser 中新增 `rawUserInfo`，用来存放第三方平台返回的原始用户数据。注：淘宝平台的`rawUserInfo`为一个空 JSON
+    - 支持 Http 级的代理配置，使用方式：
+```java
+new AuthGoogleRequest(AuthConfig.builder()
+    .clientId("")
+    .clientSecret("")
+    .redirectUri("http://127.0.0.1:8443/oauth/callback/google")
+    // 针对国外平台配置代理
+    .httpConfig(HttpConfig.builder()
+            .timeout(15000)
+            .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 10080)))
+            .build())
+    .build());
+```
+- 修改
+    - 升级 [simple-http](https://github.com/xkcoding/simple-http) 到 `v1.0.2`
+    - 升级 `fastjson` 到 `v1.2.71`
+- 删除
+    - :boom: 删除**腾讯云登录**。coding 已并入 腾讯云，因此只保留 coding 登录 :boom:
+- 文档
+    - 新增 [Coding登录](oauth/coding.md)文档
+    - 完善 [支付宝登录](oauth/alipay.md)文档
+    - 完善 [贡献者名单](contributors.md)文档
+    - 完善 [参考文档](references.md)文档
+- PR
+    - 合并 [Gitee!17](https://gitee.com/yadong.zhang/JustAuth/pulls/17)
+    - 合并 [Gitee!15](https://gitee.com/yadong.zhang/JustAuth/pulls/15)
+    - 合并 [Github#81](https://github.com/justauth/JustAuth/pull/81)
+- Issues
+    - 解决 [Github#80](https://github.com/justauth/JustAuth/issues/80)
+    - 解决 [Github#75](https://github.com/justauth/JustAuth/issues/75)
+    
+## 1.15.4-alpha
 ### 2020/05/13
 - 修复
     - 解决 Twitter 授权失败的BUG
